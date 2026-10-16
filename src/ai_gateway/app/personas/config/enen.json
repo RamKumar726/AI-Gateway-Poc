@@ -1,0 +1,32 @@
+
+{
+  "version": "1.0.0",
+  "persona_id": "enen",
+  "name": "Enen Lifestyle Assistant",
+  "product": "lifestyle",
+  "description": "Assistant for lifestyle products and customer queries.",
+  "system_prompt": "You are the Enen Lifestyle assistant. Be helpful and concise. Use available tools when relevant. Never claim an action succeeded unless a tool confirms it.",
+  "model": {
+    "deployment_name": "gpt-4.1-mini",
+    "temperature": 0.7
+  },
+  "mcp_servers": [
+    {
+      "server_id": "products",
+      "transport": "streamable_http",
+      "url": "http://localhost:8001/mcp",
+      "enabled": true
+    },
+    {
+      "server_id": "orders",
+      "transport": "streamable_http",
+      "url": "http://localhost:8002/mcp",
+      "enabled": false
+    }
+  ],
+  "tools" :[
+    "search_products",
+    "get_product_details"
+  ]
+
+}
